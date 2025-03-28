@@ -6,21 +6,25 @@ class Test
     static void Main(String[] args)
     {
 
-        Console.Write("Podaj range postaci: ");
-        string s = Console.ReadLine();
+        Console.Write("Podaj ilosc uzyskanych punktow: ");
+        byte points = Convert.ToByte(Console.ReadLine());
 
-        byte poziom = 0;
+        string grade = null;
 
-        switch (s)
+        grade = points switch
         {
-            case "szaman": poziom += 20; goto case "wojownik";
-            case "wojownik":
-            case "ninja": poziom += 30; break;
-            case "sura": poziom = 40; goto case "szaman";
-            default: Console.WriteLine("Nie ma takiej rangi"); break;
-        }
+            <= 50 => "2",
+            <= 60 => "3",
+            <= 70 => "3,5",
+            <= 78 => "4",
+            <= 86 => "4,5",
+            <= 94 => "5",
+            > 94 and <=100 => "5,5",
+            _ => "nie mozliwe"
+        };
+       
 
-        Console.WriteLine($"Lvl postaci to: {poziom}");
+        Console.WriteLine($"ocena koncowa to: {grade}");
         Console.ReadLine();
 
     }
