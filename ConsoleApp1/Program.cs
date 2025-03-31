@@ -6,26 +6,38 @@ class Test
     static void Main(String[] args)
     {
 
-        Console.Write("Podaj ilosc uzyskanych punktow: ");
-        byte points = Convert.ToByte(Console.ReadLine());
+        int[] arr = new int[20];
 
-        string grade = null;
+        Random random = new Random();
 
-        grade = points switch
+        for (int i = 0;i < 20; i++)
         {
-            <= 50 => "2",
-            <= 60 => "3",
-            <= 70 => "3,5",
-            <= 78 => "4",
-            <= 86 => "4,5",
-            <= 94 => "5",
-            > 94 and <=100 => "5,5",
-            _ => "nie mozliwe"
-        };
-       
+            arr[i] = random.Next(100);
+        }
 
-        Console.WriteLine($"ocena koncowa to: {grade}");
-        Console.ReadLine();
+        foreach (int x in arr)
+        {
+            Console.Write("{0,5}",x);
+
+        }
+
+        Console.WriteLine();    
+        int j = 0;
+        while (j < 20)
+        {
+
+
+            if (arr[j] % 2 == 0)
+            {
+                Console.Write("{0,5}", arr[j]);
+            }
+            j++;
+
+        }
+
+
+
+
 
     }
 
