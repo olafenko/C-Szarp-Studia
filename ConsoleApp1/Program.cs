@@ -19,10 +19,12 @@ class Test
         //Console.WriteLine($"Osoba to: {osoba.name} {osoba.surname}");
 
         Grupa grupa = new Grupa(10,"Dział IT");
-        grupa.add(szef,0);
+        //bez parametru opcjonalnego, przymjie wartosc domyslna czyli 0
+        grupa.add(szef);
         grupa.add(pracownik,1);
         grupa.add(osoba1,2);
-        grupa.add(osoba2,3);
+        //parametry nazwane
+        grupa.add(pozycja: 3, osoba:osoba2);
         grupa.add(osoba3,4);
         grupa.add(osoba4,5);
 

@@ -55,7 +55,8 @@ class Grupa
         return x;
     }
 
-    public void add(Osoba osoba,int pozycja)
+    //zastosowanie parametru opcjonalnego
+    public void add(Osoba osoba,int pozycja = 0)
     {
 
         people[pozycja] = osoba;
